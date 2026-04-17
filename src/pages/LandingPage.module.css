@@ -1,0 +1,11 @@
+.landing {
+  padding-top: var(--space-lg);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  padding: 0 var(--space-2xl);
+  letter-spacing: -0.02em;
+}

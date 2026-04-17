@@ -152,3 +152,7 @@ button {
   border: none;
   cursor: pointer;
 }
+
+main {
+  padding-top: 80px; /* Para compensar la altura de la navbar fija */
+}

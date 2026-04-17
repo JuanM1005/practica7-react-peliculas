@@ -1,3 +1,8 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .card {
   cursor: pointer;
   transition:
@@ -41,11 +46,17 @@
 }
 
 .title {
-  padding: var(--space-sm) var(--space-xs);
+  padding: var(--space-sm) var(--space-xs) 0;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.year {
+  padding: 0 var(--space-xs);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
 }

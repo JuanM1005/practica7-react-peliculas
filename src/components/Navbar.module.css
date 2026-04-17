@@ -1,0 +1,49 @@
+.logoLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #0a0a0acc;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.logoIcon:hover {
+  transform: scale(1.08);
+}
+
+.logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
