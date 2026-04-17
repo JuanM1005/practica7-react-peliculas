@@ -27,7 +27,7 @@ function LandingPage() {
     };
 
     fetchMovies();
-  }, []);
+  }, []); // <-- No borrar este arreglo!
 
   return (
     <section className={styles.landing}>

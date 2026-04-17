@@ -10,6 +10,9 @@
 import { useParams } from "react-router-dom";
 
 function MovieDetails() {
+  /* Este hook extrae el parámetro dinámico de la URL.
+  Se llama 'movieId' porque en AppRouter.jsx definimos la ruta como: "/movies/:movieId"
+  Si en la URL dice localhost:5173/movies/123, movieId valdrá "123".*/
   const { movieId } = useParams();
 
   return (

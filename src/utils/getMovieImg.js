@@ -28,3 +28,4 @@ const getMovieImg = (path, size = "w500") => {
 };
 
 export default getMovieImg;
+
