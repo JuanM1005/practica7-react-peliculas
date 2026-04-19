@@ -14,7 +14,7 @@ function MovieDetails() {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>Detalle de película2</h2>
+      <h2>Detalle de película</h2>
       <p>ID: {movieId}</p>
       <p>Próximamente: diseño completo aquí.</p>
     </div>
