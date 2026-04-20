@@ -9,3 +9,29 @@
   padding: 0 var(--space-2xl);
   letter-spacing: -0.02em;
 }
+
+.statusMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-3xl) var(--space-2xl);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  text-align: center;
+}
+
+.retryButton {
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  transition: background-color var(--transition-fast);
+}
+
+.retryButton:hover {
+  background-color: var(--color-accent-hover);
+}

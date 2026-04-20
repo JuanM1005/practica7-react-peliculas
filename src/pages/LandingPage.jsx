@@ -1,38 +1,55 @@
-/*
-   LandingPage — Página principal de la aplicación.
-
-   Muestra el grid de películas populares consumiendo la API de TMDB.
-   Se monta en la ruta "/" definida en AppRouter.
- */
-
 import { useState, useEffect } from "react";
 import httpClient from "../services/httpClient";
 import MovieGrid from "../components/MovieGrid";
 import styles from "./LandingPage.module.css";
 
 function LandingPage() {
-  // Estado para almacenar las películas populares
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Efecto para obtener las películas populares al montar el componente (Solo se ejecuta una vez, llamada a la API cuando el componente se monta como prueba)
+  // Extraída fuera del useEffect para poder reutilizarla en el botón "Reintentar"
+  const fetchMovies = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await httpClient.get("/movie/popular");
+      setMovies(response.data.results);
+    } catch (e) {
+      console.error("Error al cargar películas:", e);
+      setError("No se pudieron cargar las películas. Verifica tu conexión o intenta más tarde.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await httpClient.get("/movie/popular");
-        // console.log(response.data.results[0]); // Verificar que los datos se reciben correctamente y que paramateros utilizar
-        setMovies(response.data.results);
-      } catch (e) {
-        console.error(`Error fetching data: ${e}`);
-      }
-    };
-
     fetchMovies();
-  }, []); // <-- No borrar este arreglo!
+  }, []);
 
   return (
     <section className={styles.landing}>
       <h2 className={styles.sectionTitle}>Películas Populares</h2>
-      <MovieGrid movies={movies} />
+
+      {loading && <div className={styles.statusMessage}>Cargando películas...</div>}
+
+      {!loading && error && (
+        <div className={styles.statusMessage}>
+          <p>{error}</p>
+          <button className={styles.retryButton} onClick={fetchMovies}>
+            Reintentar
+          </button>
+        </div>
+      )}
+
+      {!loading && !error && movies.length === 0 && (
+        <div className={styles.statusMessage}>
+          <p>No se encontraron películas en este momento.</p>
+        </div>
+      )}
+
+      {!loading && !error && movies.length > 0 && <MovieGrid movies={movies} />}
     </section>
   );
 }
