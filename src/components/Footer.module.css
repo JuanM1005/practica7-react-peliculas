@@ -3,7 +3,10 @@
   border-top: 1px solid #333;
   padding: 40px 20px 20px;
   margin-top: 60px; /* Separación con el resto de la página */
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
 }
 
 .footerInner {

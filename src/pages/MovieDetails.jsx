@@ -10,7 +10,8 @@ function MovieDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    httpClient.get(`/movie/${movieId}`)
+    httpClient
+      .get(`/movie/${movieId}`)
       .then((response) => {
         setMovie(response.data);
       })
@@ -27,29 +28,35 @@ function MovieDetails() {
 
   return (
     <div className={styles.detailsContainer}>
-      <img 
-        className={styles.movieImage} 
-        src={imageUrl} 
-        alt={movie.title} 
-      />
+      <img className={styles.movieImage} src={imageUrl} alt={movie.title} />
       <div className={styles.movieInfo}>
         <h2 className={styles.title}>{movie.title}</h2>
-        
+
         {/* Si la película tiene un lema (tagline), lo mostramos */}
         {movie.tagline && <h3 className={styles.tagline}>"{movie.tagline}"</h3>}
-        
+
         <div className={styles.extraData}>
-          <p><strong>⭐ Calificación:</strong> {movie.vote_average.toFixed(1)} / 10</p>
-          <p><strong>📅 Estreno:</strong> {movie.release_date}</p>
-          <p><strong>⏱️ Duración:</strong> {movie.runtime} minutos</p>
-          <p><strong>🎭 Géneros:</strong> {movie.genres.map((g) => g.name).join(", ")}</p>
+          <p>
+            <strong>⭐ Calificación:</strong> {movie.vote_average.toFixed(1)} / 10
+          </p>
+          <p>
+            <strong>📅 Estreno:</strong> {movie.release_date}
+          </p>
+          <p>
+            <strong>⏱️ Duración:</strong> {movie.runtime} minutos
+          </p>
+          <p>
+            <strong>🎭 Géneros:</strong> {movie.genres.map((g) => g.name).join(", ")}
+          </p>
         </div>
 
         <div className={styles.overview}>
-          <p><strong>Sinopsis:</strong></p>
+          <p>
+            <strong>Sinopsis:</strong>
+          </p>
           <p>{movie.overview}</p>
         </div>
-        
+
         <button className={styles.backButton} onClick={() => navigate(-1)}>
           Regresar
         </button>

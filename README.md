@@ -97,11 +97,14 @@ practica7-react-peliculas/
 5. Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
 ### Scripts disponibles
+
 ... (92 líneas restantes)
 
 message.txt
 7 KB
+
 ﻿
+
 # Práctica 7 - FrameLix: App de Películas con React
 
 Aplicación web SPA desarrollada con React + Vite que consume la API de TMDB para mostrar un catálogo de películas populares y el detalle de cada una.
@@ -214,10 +217,10 @@ practica7-react-peliculas/
 
 ## Rutas utilizadas
 
-| Ruta                 | Componente     | Descripción                                    |
-| -------------------- | -------------- | ---------------------------------------------- |
-| `/`                  | `LandingPage`  | Listado de películas populares                 |
-| `/movies/:movieId`   | `MovieDetails` | Vista de detalle de una película seleccionada  |
+| Ruta               | Componente     | Descripción                                   |
+| ------------------ | -------------- | --------------------------------------------- |
+| `/`                | `LandingPage`  | Listado de películas populares                |
+| `/movies/:movieId` | `MovieDetails` | Vista de detalle de una película seleccionada |
 
 ## API utilizada
 

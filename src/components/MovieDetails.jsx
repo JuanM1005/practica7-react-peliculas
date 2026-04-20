@@ -60,8 +60,7 @@ function MovieDetails() {
 
   const imageUrl = getMovieImg(movie.poster_path, "w500") || PLACEHOLDER_IMG;
   // Protegemos vote_average: evita que toFixed rompa la página si viene undefined/null
-  const rating =
-    typeof movie.vote_average === "number" ? movie.vote_average.toFixed(1) : "N/A";
+  const rating = typeof movie.vote_average === "number" ? movie.vote_average.toFixed(1) : "N/A";
 
   return (
     <div className={styles.detailsContainer}>

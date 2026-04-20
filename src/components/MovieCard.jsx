@@ -18,8 +18,7 @@ function MovieCard({ movie }) {
   const posterUrl = getMovieImg(movie.poster_path) || PLACEHOLDER_IMG;
   const year = movie.release_date ? new Date(movie.release_date).getFullYear() : "N/A";
   // Protegemos vote_average: si viene undefined/null (películas muy nuevas), evitamos que toFixed rompa la app
-  const rating =
-    typeof movie.vote_average === "number" ? movie.vote_average.toFixed(1) : "N/A";
+  const rating = typeof movie.vote_average === "number" ? movie.vote_average.toFixed(1) : "N/A";
 
   return (
     <Link to={`/movies/${movie.id}`} className={styles.link}>
